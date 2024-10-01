@@ -1,0 +1,31 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+}
+
+#heading {
+    background-color: blueviolet;
+    font-size: 50px;
+    border: 4px chocolate dotted;
+    border-radius: 12px;
+    color: red;
+    text-align: center;
+}
+
+table {
+    width: 50%;
+    font-size: 20px;
+    color: crimson;
+    font-weight: bold;
+}
+
+#container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

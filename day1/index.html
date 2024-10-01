@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <table border="2px">
+            <form action="">
+                <tr>
+                    <td colspan="2" id="heading">Registration Form</td>
+                </tr>
+                <!-- wrote tr>td*2 to get the following result-->
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" placeholder="Write your name" required></td>
+                </tr>
+                <tr>
+                    <td>Email ID</td>
+                    <td><input type="email" name="t1" id="" placeholder="example@exmail.com" required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea name="" rows="3" cols="20" placeholder="House No., Street name, Landmark, City, State, Pin Code" id=""></textarea></td>
+                </tr>
+                <tr>
+                    <td>Branch</td>
+                    <td>
+                        CSE <input type="radio" name="b1" value="cse">
+                        IT <input type="radio" name="b1" value="it">
+                        DS <input type="radio" name="b1" value="ds">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Languages you know</td>
+                    <td>
+                        Python <input type="checkbox" name="c1" value="python">
+                        C++ <input type="checkbox" name="c1" value="cpp">
+                        Java <input type="checkbox" name="c1" value="java">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Upload Profile Picture</td>
+                    <td><input type="file" name="" id=""></td>
+                </tr>
+                <tr>
+                    <td>City preference</td>
+                    <td><select name="s1" value="">
+                        <option value="none">not chosen yet</option>
+                        <!-- the 1st option is the placeholder or you can use the `selected` attribute on your preferred one -->
+                        <option value="gzb">Ghaziabad</option>
+                        <option value="noida">Noida</option>
+                        <option value="dl">Delhi</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td><input type="date" name="" id=""></td> 
+                    <!-- no need for placeholder here as that is already taken care of by the type="date" -->
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Register"></td>
+                    <td><input type="reset" value="Reset"></td>
+                </tr>
+            </form>
+        </table>
+    </div>
+</body>
+</html>
