@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+    overscroll-behavior: contain;
+}
+
+#heading {
+    background-color: blueviolet;
+    font-size: 50px;
+    border: 4px chocolate dotted;
+    border-radius: 12px;
+    color: red;
+    text-align: center;
+}
+
+table {
+    font-size: 15px;
+    color: crimson;
+    font-weight: bold;
+    text-align: center;
+    border-spacing: 15px 15px;
+}
+
+td {
+    border: 2px solid black;
+}
+
+.vidCaption {
+    text
+    width: 70%;
+    height: 50px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#container {
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+}
