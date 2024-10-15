@@ -34,7 +34,7 @@ const promise = new Promise(function (resolve, reject) {
 
 promise.then(console.log).catch(console.log);
 
-doing the previous rollNo thing with promises
+// doing the previous rollNo thing with promises
 function getRoll(num, delay) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
