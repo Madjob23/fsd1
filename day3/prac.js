@@ -11,43 +11,44 @@ function roll(num, delay, nextRoll) {
     setTimeout(
         ()=> {
             console.log("roll no : " + num);
+            if (nextRoll) nextRoll();
         }, delay
     );
-    if (nextRoll) nextRoll();
+    
 }
 
 // introduction to callback hell
 roll(1, 1000, () => {
-    roll(2, 2000, () => {
-        roll(3, 3000, () => {
-            roll(4, 4000)
+    roll(2, 3000, () => {
+        roll(3, 5000, () => {
+            roll(4, 7000)
         });
     });
 });
 
 // intor to promises
-const promise = new Promise(function (resolve, reject) {
-    console.log('My first promise');
-    resolve('resolved');
-    reject('rejected');
-});
+// const promise = new Promise(function (resolve, reject) {
+//     console.log('My first promise');
+//     resolve('resolved');
+//     reject('rejected');
+// });
 
-promise.then(console.log).catch(console.log);
+// promise.then(console.log).catch(console.log);
 
 // doing the previous rollNo thing with promises
-function getRoll(num, delay) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log("roll no :", num);
-            resolve();
-        }, delay);
-    });
-}
+// function getRoll(num, delay) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             console.log("roll no :", num);
+//             resolve();
+//         }, delay);
+//     });
+// }
 
-getRoll(1, 1000).then(() => {
-    getRoll(2, 2000).then(() => {
-        getRoll(3, 3000).then(() => {
-            getRoll(4, 4000);
-        });
-    });
-});
+// getRoll(1, 1000).then(() => {
+//     getRoll(2, 2000).then(() => {
+//         getRoll(3, 3000).then(() => {
+//             getRoll(4, 4000);
+//         });
+//     });
+// });
