@@ -1,0 +1,90 @@
+<!-- 
+Event Handling
+Event Delegation
+Creating HTML elements using JavaScript 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+    <h1>Events in JavaScript</h1>
+    <button id="click">Click Me!</button>
+    <p id="btnDisplay"></p>
+
+    <label for="txtField">Name: </label>
+    <input type="text" id="txtField" placeholder="Enter your name">
+    <p id="txtDisplay"></p>
+
+    <label for="colorSelect">Select a  color:  </label>
+    <select name="" id="colorSelect">
+        <option value="">--Choose--</option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+    </select>
+    <p id="colorDisplay"></p>
+
+    <script>
+        let div = document.createElement('div');
+        document.body.appendChild(div)
+        
+        let heading = document.createElement('h1');
+        heading.textContent = 'Events in JavaScript';
+        div.appendChild(heading);
+
+        let button = document.createElement('button');
+        button.textContent = 'Click Me!';
+        div.appendChild(button);
+        
+        let btnPara = document.createElement('p');
+        btnPara.id = 'btnPara';
+        div.appendChild(btnPara);
+
+        let txtLabel = document.createElement('label');
+        txtLabel.for = 'txtInput';
+        txtLabel.textContent = 'Name: '
+        div.appendChild(txtLabel);
+
+        let txtField = document.createElement('input');
+        txtField.type = 'text'; txtField.id = 'txtInput';
+        txtField.placeholder = 'Enter your name';
+        txtLabel.appendChild(txtField);
+
+        let txtPara = document.createElement('p');
+        txtPara.id = 'txtPara';
+        div.appendChild(txtPara);
+
+        div.addEventListener('click', (event) => {
+            if(event.target.tagName === 'BUTTON') {
+                btnPara.innerText = 'Button Clicked!';
+            }
+            else {
+                txtPara.innerText = 'Text Field Focused!';
+                txtField.addEventListener('blur', () => {
+                    txtPara.innerText = 'Text Field Blurred!';
+                });
+            }
+        });
+        
+        document.getElementById("click").addEventListener('click', function() {
+            document.getElementById('btnDisplay').innerText = 'Button Clicked!';
+        });
+        document.getElementById('txtField').addEventListener('focus', function() {
+            document.getElementById('txtDisplay').innerHTML = 'Text Field Focused!';
+        });
+        document.getElementById('txtField').addEventListener('blur', function() {
+            document.getElementById('txtDisplay').innerHTML = 'Text Field Blurred!';
+        });
+        document.getElementById('colorSelect').addEventListener('change', function() {
+            document.getElementById('colorDisplay').innerHTML = 'Selected Color: ' + document.getElementById('colorSelect').value;
+        });
+        
+    </script>
+</body>
+
+</html>
