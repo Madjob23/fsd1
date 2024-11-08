@@ -3,7 +3,14 @@ const validPassword = "password123";
 const submitButton = document.getElementById("submit");
 const errorBox = document.getElementById("error");
 
+function displayError(error) {
+    errorBox.style.display = "block";
+    errorBox.textContent = result;
+}
 
+document.addEventListener('keydown', () => {
+    errorBox.style.display = "none";
+});
 
 function validateLogin(username, password) {
     if (username === "" || password === "") {
@@ -23,12 +30,7 @@ submitButton.addEventListener('click', (e) => {
     const result = validateLogin(usernameInput, passwordInput);
     if (result === "Login successful!") {
         window.location.href = "./pages/calculator.html";
+    } else {
+        displayError(result);
     }
-    errorBox.style.display = "block";
-    errorBox.textContent = result;
-})
-
-
-document.addEventListener('keydown', () => {
-    errorBox.style.display = "none";
 })
