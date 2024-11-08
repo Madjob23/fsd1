@@ -7,6 +7,38 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <div class="calc-main">
+
+        <h1>Currency Converter</h1>
+
+        <div class="input-sec">
+            <div class="inp-currency">
+                <label for="input">Amount:</label>
+                <input type="text" id="input" name="input" required>
+                <select name="inputCurrency" id="inputCurrency">
+                    <option value="default" selected>Select Currency</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="inr">INR</option>
+                    <option value="jpy">JPY</option>
+                    <option value="gbp">GBP</option>
+                </select>
+            </div>
     
+            <div class="out-currency">
+                <label for="output">Amount:</label>
+                <input type="text" id="output" name="output" required>
+                <select name="outputCurrency" id="outputCurrency">
+                    <option value="default" selected>Select Currency</option>
+                    <option value="usd">USD</option>
+                    <option value="eur">EUR</option>
+                    <option value="inr">INR</option>
+                    <option value="jpy">JPY</option>
+                    <option value="gbp">GBP</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
 </body>
 </html>
