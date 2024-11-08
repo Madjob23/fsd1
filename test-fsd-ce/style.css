@@ -32,6 +32,16 @@ form {
     padding: 20px 50px;
 }
 
+.error {
+    color: red;
+    font-size: 12px;
+    border: 2px solid red;
+    background-color: bisque;
+    text-align: center;
+    display: none;
+    padding: 5px;
+}
+
 button {
     padding: 5px 10px;
     font-size: 10px;
