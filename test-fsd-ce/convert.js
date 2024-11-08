@@ -1,25 +1,37 @@
 const convertBtn = document.getElementById("convertButton");
 
-async function convertCurrency() {
+function displayError(error) {
+    const errorBox = document.getElementById("error");
+    errorBox.style.display = "block";
+    errorBox.textContent += `\n${error}`;
+}
+
+async function convertCurrency(inpAmount, inpCurrency, outCurrency) {
+        const rawData = await fetch(`https://api.exchangerate-api.com/v4/latest/${inpCurrency}`)
+        const data = await rawData.json();
+        const rate = await data.rates[outCurrency];
+        return rate * inpAmount;
+}
+
+convertBtn.addEventListener('click', async (e) => {
+    const inpAmount = Number(document.getElementById("input").value);
     const inpCurrency = document.getElementById("inputCurrency").value;
     const outAmount = document.getElementById("output").value;
     const outCurrency = document.getElementById("outputCurrency").value;
+    if (typeof(inpAmount) != 'number') {
+        displayError("Enter a valid number!");
+        return;
+    }
     if (outAmount) {
-        return "Don't enter output amount!";
+        displayError("Output field must be empty!");
+        return;
     }
-    if (inpCurrency === outCurrency) {
-        document.getElementById("output").value = inpAmount;
-    } else {
-        const rate = await fetch(`https://api.exchangerate-api.com/v4/latest/${inpCurrency}`)
-        const data = await rate.json();
-        return data.rates[outCurrency];
+    if (inpCurrency.length() > 3 || outCurrency.length() > 3) {
+        displayError("Select a currency from the dropdown!");
+        return;
     }
-}
-convertBtn.addEventListener('click', async (e) => {
-    const inpAmount = Number(document.getElementById("input").value);
-    console.log(inpAmount);
-    const result = await convertCurrency();
-    console.log(result);
-    console.log(result * inpAmount);
-    document.getElementById('output').value = result * inpAmount;
+    const convertedAmount = await convertCurrency(inpAmount);
+    if (convertedAmount !== undefined) {
+        document.getElementById('output').value = convertedAmount;
+    }
 })
