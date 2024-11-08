@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Exchange Calculator</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="../convert.js" defer></script>
 </head>
 <body>
     <div class="calc-main">
 
         <h1>Currency Converter</h1>
+        <div id="error"></div>
 
         <div class="input-sec">
             <div class="inp-currency">
@@ -26,8 +28,8 @@
             </div>
     
             <div class="out-currency">
-                <label for="output">Amount:</label>
-                <input type="text" id="output" name="output" required>
+                <label for="output">Convert:</label>
+                <input type="text" id="output" name="output">
                 <select name="outputCurrency" id="outputCurrency">
                     <option value="default" selected>Select Currency</option>
                     <option value="usd">USD</option>
@@ -39,7 +41,7 @@
             </div>
         </div>
 
-        <button>Convert</button>
+        <button id="convertButton">Convert</button>
 
     </div>
 </body>

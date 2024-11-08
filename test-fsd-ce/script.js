@@ -3,6 +3,8 @@ const validPassword = "password123";
 const submitButton = document.getElementById("submit");
 const errorBox = document.getElementById("error");
 
+
+
 function validateLogin(username, password) {
     if (username === "" || password === "") {
         return "Fields cannot be empty!";
@@ -25,6 +27,7 @@ submitButton.addEventListener('click', (e) => {
     errorBox.style.display = "block";
     errorBox.textContent = result;
 })
+
 
 document.addEventListener('keydown', () => {
     errorBox.style.display = "none";
