@@ -13,6 +13,13 @@ body {
     height: 100vh;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* LOG IN PAGE */
+
 form {
     background-color: #1F2937;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -28,4 +35,28 @@ form {
 button {
     padding: 5px 10px;
     font-size: 10px;
+}
+
+/* CURRENCY CONVERTER */
+
+.calc-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #1F2937;
+    color: #F3F4F6;
+    border-radius: 10px;
+    padding: 20px 60px;
+    min-height: 80%;
+    justify-content: space-between;
+}
+
+.input-sec {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
