@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent"></div>
+
+    <!-- CDN LINKS FOR REACT AND REACT DOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        const parent = document.querySelector('.parent');
+        const root = ReactDOM.createRoot(parent);
+        const h1 = React.createElement("h1", {}, "Hello, World!");
+        // root.render(h1) // turned obsolete cuz of line 24
+
+        const item1 = React.createElement('li', {}, 'React');
+        const item2 = React.createElement('li', {}, 'Node.js');
+        const ul = React.createElement('ul', {}, item1, item2);
+        root.render([h1, ul]);
+
+        document.querySelector('body').style.fontFamily = 'Helvetica';
+
+        // DOM Revision
+
+        // const h1 = document.createElement('h1');
+        // h1.textContent = 'React class';
+        // parent.appendChild(h1);
+        // const ul = document.createElement('ul');
+        // const item1 = document.createElement('li');
+        // const item2 = document.createElement('li');
+        // item1.textContent = 'React';
+        // ul.appendChild(item1);
+        // item2.textContent = 'Node.js';
+        // ul.appendChild(item2);
+        // parent.appendChild(ul);
+        // parent.style.fontFamily = 'Verdana';
+    </script>
+</body>
+</html>
