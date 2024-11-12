@@ -12,6 +12,11 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
+    <!-- CDN LINK FOR BABEL -->
+    <!-- IT IS A JS COMPILER, IT CAN TRANSFORM SYNTAX -->
+    <!-- `const h1 = <h1>Hello world</h1>` will become `const h1 = React.createElement('h1', null, 'Hello world')` -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
     <script>
         const parent = document.querySelector('.parent');
         const root = ReactDOM.createRoot(parent);
@@ -21,9 +26,17 @@
         const item1 = React.createElement('li', {}, 'React');
         const item2 = React.createElement('li', {}, 'Node.js');
         const ul = React.createElement('ul', {}, item1, item2);
-        root.render([h1, ul]);
+        // root.render([h1, ul]);
 
         document.querySelector('body').style.fontFamily = 'Helvetica';
+
+        // using babel and JSX
+        const h2 = <h1>Hello, World!</h1>;
+        const item3 = <li>React</li>;
+        const item4 = <li>Node.js</li>;
+        const ul2 = (<ul>{item3}{item4}</ul>);
+        const container = <div>{h2}{ul2}</div>;
+        root.render([h1, ul, container]);
 
         // DOM Revision
 
