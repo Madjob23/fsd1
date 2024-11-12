@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            height: 20em;
+            width: 15em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: lightgray;
+            box-shadow: 5px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>
+                Basic
+            </h1>
+            <p>
+                $10/month
+            </p>
+            <p>Feature 1</p>
+            <p>Feature 2</p>
+            <button>Sign up</button>
+        </div>
+        <div class="card">
+            <h1>
+                Premium
+            </h1>
+            <p>
+                $30/month
+            </p>
+            <p>Feature 1</p>
+            <p>Feature 2</p>
+            <p>Feature 3</p>
+            <button>Sign up</button>
+        </div>
+        <div class="card">
+            <h1>
+                Pro
+            </h1>
+            <p>
+                $50/month
+            </p>
+            <p>Feature 1</p>
+            <p>Feature 2</p>
+            <p>Feature 3</p>
+            <p>Feature 4</p>
+            <button>Sign up</button>
+        </div>
+    </div>
+</body>
+</html>
