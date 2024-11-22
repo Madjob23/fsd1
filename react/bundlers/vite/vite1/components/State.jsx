@@ -3,7 +3,6 @@ import { useState } from 'react'
 function State() {
     const [count, setCount] = useState(0);
     const [headingColor, setHeadingColor] = useState("blue");
-    const h1 = document.querySelector("h1");
   return (
     <div>
       <button onClick={() => {setCount(count + 1)}}>
@@ -13,7 +12,6 @@ function State() {
         Ghatao
       </button>
       <p>{count}</p>
-      <br />
       <h1 style={{color:headingColor}}>My facoritecolor is {headingColor}</h1>
         <button onClick={()=>{
             setHeadingColor("red");
