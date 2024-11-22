@@ -12,7 +12,7 @@ function State() {
         Ghatao
       </button>
       <p>{count}</p>
-      <h1>My facoritecolor is <span style={{color:headingColor}}>{headingColor}</span></h1>
+      <h1>My favorite color is <span style={{color:headingColor}}>{headingColor}</span></h1>
         <button onClick={()=>{
             setHeadingColor("red");
             }}>Red</button>
